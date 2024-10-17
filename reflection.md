@@ -2,13 +2,13 @@ Throughout the process of making my sketch, I found various things challenging, 
 
 ![Image alt[](](https://github.com/joaniborragil/shapessketch.io/blob/main/IMG_0117.jpg?raw=true)
 
-P1: Colors are changed in Sketch, due to them contrasting oddly, and roof moves with Y mouse instead of its strict coordinates.  
+P1: Colors are changed in Sketch, due to them contrasting oddly, and the roof moves with Y mouse instead of its strict coordinates. Coordinate implementation was difficult.  
 
 
 
-![Image alt[](](
+![Image alt[](](https://github.com/joaniborragil/shapessketch.io/blob/main/IMG_0103.jpg?raw=true)
 
 
 
-
+P2: Similar to the final Sketch, the lines in the Sketch are more neat and straight. Colors are exact to Sketch.
 
