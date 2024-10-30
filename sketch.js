@@ -1,42 +1,48 @@
+let canvasSize = 600;
+let houseWidth = 200;
+let houseHeight = 200;
+let doorWidth = 1 / 3;
+let doorHeight = 1 / 2;
+let windowWidth = 1 / 4;
+let windowHeight = 1 / 4;
+let chimneyWidth = 1 / 8;
+let chimneyHeight = 1 / 4;
+let backgroundColor = "#B7B09C";
+let houseColor = "#C17E60";
+let doorColor = "#D3AE6F";
+let windowColor = "#44C3D4";
+let chimneyColor = "#000000";
+let roofColor = "#3D68B2";
+
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(canvasSize, canvasSize);
 }
 
 function draw() {
-  background("#B7B09C");
-
-  
-  myshape(200, 200, 200, 200);
-
-  
-  myMovingRoof(200, 200, 200, mouseY);
+  background(backgroundColor);
+  myshape(200, 200, houseWidth, houseHeight);
+  myMovingRoof(200, 200, houseWidth, mouseY);
 }
-
-// House drawing function
 function myshape(x, y, w, h) {
   // House base
-  fill("#C17E60"); 
+  fill(houseColor); 
   rect(x, y, w, h);
 
-  // Door
-  fill("#D3AE6F"); 
-  rect(x + w / 3, y + h / 2, w / 3, h / 2);
-
-  // Windows
-  fill("#44C3D4");
-  rect(x + w / 8, y + h / 4, w / 4, h / 4); // Left window
-  rect(x + 5 * w / 8, y + h / 4, w / 4, h / 4); // Right window
-
-  // Chimney
-  fill("#000000"); 
-  rect(x + 3 * w / 4, y - h / 4, w / 8, h / 4);
-}
-
-// Moving roof function
-function myMovingRoof(x, y, w, h) {
-  fill("#3D68B2"); // Indigo
-  let roofHeight = h
+  fill(doorColor); 
+  rect(x + w * (1 - doorWidth) / 2, y + h / 2, w * doorWidth, h * doorHeight); // Door
 
   
-  triangle( x,y, x + w / 2, y - roofHeight, x + w,y );
+  fill(windowColor);
+  rect(x + w / 8, y + h / 4, w * windowWidth, h * windowHeight); // Left window
+  rect(x + 5 * w / 8, y + h / 4, w * windowWidth, h * windowHeight); // Right window
+
+  
+  fill(chimneyColor); 
+  rect(x + 3 * w / 4, y - h * chimneyHeight, w * chimneyWidth, h * chimneyHeight);
+}
+function myMovingRoof(x, y, w, h) {
+  fill(roofColor);
+  let roofHeight = h;
+  
+  triangle(x, y, x + w / 2, y - roofHeight, x + w, y);
 }
